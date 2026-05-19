@@ -1,51 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-    <!-- Replace the content tag with appropriate information -->
-    <meta name="description" content="Amit Roth">
+    <meta name="description" content="Amit Roth - PhD Student">
     <meta property="og:title" content="Amit Roth"/>
     <meta property="og:url" content="https://majoroth.github.io"/>
-    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-    <meta property="og:image" content="static/profile.jpeg"/>
+    <meta property="og:image" content="static/profile_2.jpeg"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
-
-
-    <!-- Keywords for your paper to be indexed by-->
-    <meta name="keywords"
-          content="Amit Roth, HUJI, Text to Speech, Hebrew, Hebrew Text to Speech">
+    <meta name="keywords" content="Amit Roth, TAU, PhD, Research">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Amit Roth</title>
-        <link rel="icon" type="image/x-icon" href="static/profile.jpeg">
+    <link rel="icon" type="image/png" href="static/tau_logo.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css"/>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<img class="profile" src="static/profile.jpeg" alt="Avatar">
+    <!-- Hero: profile + about, all on one page -->
+    <section class="hero" id="hero">
+        <div class="hero-parallax-bg" id="parallax-bg"></div>
 
-<div class="middle">
-    <a class="btn" href="https://www.linkedin.com/in/amit-roth/">
-        <i class="fab fa-linkedin-in"></i>
-    </a>
-    <a class="btn" href="https://github.com/MajoRoth">
-        <i class="fab fa-github"></i>
-    </a>
-    <a class="btn" href="https://twitter.com/home">
-        <i class="fab fa-twitter"></i>
-    </a>
+        <div class="hero-content">
+            <!-- Profile block -->
+            <div class="profile-block">
+                <img class="profile-img" src="static/profile_2.jpeg" alt="Amit Roth">
+                <div class="profile-text">
+                    <h1 class="hero-name">Amit Roth</h1>
+                    <p class="hero-tagline">PhD Student &middot; Tel Aviv University</p>
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=aUHJ154AAAAJ" class="social-btn" title="Google Scholar" target="_blank" rel="noopener">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://github.com/MajoRoth" class="social-btn" title="GitHub" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/amit-roth/" class="social-btn" title="LinkedIn" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://x.com/Amit_Roth" class="social-btn" title="Twitter / X" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:amitroth@gmail.com" class="social-btn" title="Email">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    <a class="btn" href="mailto:amitroth@gmail.com">
-        <i class="fa fa-envelope"></i>
-    </a>
-</div>
+            <!-- About text, inline in the hero -->
+            <div class="hero-divider"></div>
+            <p class="about-text">
+                I am a PhD student at <a href="https://english.tau.ac.il" target="_blank" rel="noopener">Tel Aviv University</a>,
+                advised by Yonathan Efroni. I have broad interests in agentic AI and large language models. My current research focuses on studying reward hacking in LLM-based agents.
+            </p>
+        </div>
+
+        <div class="hero-scroll-hint" id="scroll-hint">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section class="publications" id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+
+            <div class="pub-list">
+
+                <div class="pub-row fade-in">
+                    <div class="pub-meta">
+                        <span class="pub-year">2025</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3 class="pub-title"><a href="https://arxiv.org/abs/2504.02398">Scaling Analysis of Interleaved Speech-Text Language Models</a></h3>
+                        <p class="pub-venue">CoLM 2025</p>
+                        <p class="pub-authors">Gallil Maimon, Michael Hassid, <strong>Amit Roth</strong>, Yossi Adi</p>
+                        <div class="pub-links">
+                            <a href="https://arxiv.org/abs/2504.02398" class="pub-link"><i class="fas fa-file-alt"></i> Paper</a>
+                            <a href="https://pages.cs.huji.ac.il/adiyoss-lab/sims/" class="pub-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://pages.cs.huji.ac.il/adiyoss-lab/sims/" class="pub-link"><i class="fas fa-globe"></i> Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-row fade-in">
+                    <div class="pub-meta">
+                        <span class="pub-year">2025</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3 class="pub-title"><a href="https://arxiv.org/abs/2409.07437">SALMON: A Suite for Acoustic Language Model Evaluation</a></h3>
+                        <p class="pub-venue">ICASSP 2025</p>
+                        <p class="pub-authors">Gallil Maimon<sup>*</sup>, <strong>Amit Roth<sup>*</sup></strong>, Yossi Adi</p>
+                        <div class="pub-links">
+                            <a href="https://arxiv.org/abs/2409.07437" class="pub-link"><i class="fas fa-file-alt"></i> Paper</a>
+                            <a href="https://github.com/slp-rl/salmon" class="pub-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://pages.cs.huji.ac.il/adiyoss-lab/salmon/" class="pub-link"><i class="fas fa-globe"></i> Project</a>
+                        </div>
+                    </div>
+                </div>
 
 
+                <div class="pub-row fade-in">
+                    <div class="pub-meta">
+                        <span class="pub-year">2024</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3 class="pub-title"><a href="https://arxiv.org/abs/2407.07566">HebDB: A Weakly Supervised Dataset for Hebrew Speech Processing</a></h3>
+                        <p class="pub-venue">Interspeech 2024</p>
+                        <p class="pub-authors">Arnon Turetzky, Or Tal, Yael Segal-Feldman, Yehoshua Dissen, Ella Zeldes, <strong>Amit Roth</strong>, Eyal Cohen, Yosi Shrem, Bronya R. Chernyak, Olga Seleznova, Joseph Keshet, Yossi Adi</p>
+                        <div class="pub-links">
+                            <a href="https://arxiv.org/abs/2407.07566" class="pub-link"><i class="fas fa-file-alt"></i> Paper</a>
+                            <a href="https://pages.cs.huji.ac.il/adiyoss-lab/HebDB/" class="pub-link"><i class="fas fa-globe"></i> Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-row fade-in">
+                    <div class="pub-meta">
+                        <span class="pub-year">2024</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3 class="pub-title"><a href="https://arxiv.org/abs/2407.12206">A Language Modeling Approach to Diacritic-Free Hebrew TTS</a></h3>
+                        <p class="pub-venue">Interspeech 2024</p>
+                        <p class="pub-authors"><strong>Amit Roth</strong>, Arnon Turetzky, Yossi Adi</p>
+                        <div class="pub-links">
+                            <a href="https://arxiv.org/abs/2407.12206" class="pub-link"><i class="fas fa-file-alt"></i> Paper</a>
+                            <a href="https://pages.cs.huji.ac.il/adiyoss-lab/HebTTS/" class="pub-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://pages.cs.huji.ac.il/adiyoss-lab/HebTTS/" class="pub-link"><i class="fas fa-globe"></i> Project</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Amit Roth &middot; <a href="mailto:amitroth@gmail.com">amitroth@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const parallaxBg = document.getElementById('parallax-bg');
+        const scrollHint = document.getElementById('scroll-hint');
+
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            if (parallaxBg) parallaxBg.style.transform = `translateY(${y * 0.35}px)`;
+            if (scrollHint) scrollHint.style.opacity = Math.max(0, 1 - y / 180);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
