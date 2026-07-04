@@ -355,6 +355,143 @@ a:hover { text-decoration: underline; }
 .footer a:hover { color: var(--accent); }
 
 /* ============================================================
+   BUBBLES — dancing bubbles, bottom-left of hero
+   ============================================================ */
+
+.bubbles-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    height: 30vh;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 35% 30%,
+        rgba(26, 86, 219, 0.14) 0%,
+        rgba(26, 86, 219, 0.06) 40%,
+        transparent 70%
+    );
+    border: 1.5px solid rgba(26, 86, 219, 0.2);
+    box-shadow:
+        inset -2px -2px 6px rgba(26, 86, 219, 0.06),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.6);
+    animation: bubble-dance ease-in-out infinite;
+}
+
+.bubble--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(26, 86, 219, 0.35);
+    font-size: 14px;
+    pointer-events: auto;
+    cursor: default;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bubble--icon:hover {
+    transform: scale(1.55);
+    border-color: transparent;
+    background: radial-gradient(
+        circle at 35% 30%,
+        rgba(26, 86, 219, 0.22) 0%,
+        rgba(26, 86, 219, 0.1) 40%,
+        rgba(26, 86, 219, 0.03) 70%
+    );
+    box-shadow:
+        0 0 10px rgba(26, 86, 219, 0.25),
+        0 0 25px rgba(26, 86, 219, 0.12),
+        inset 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Small empty bubbles — placed within the 30vh zone */
+.bubble-1  { width: 10px; height: 10px; left: 12%;  bottom: 70%; animation-duration: 3.2s; animation-delay: 0s; }
+.bubble-2  { width: 7px;  height: 7px;  left: 45%;  bottom: 25%; animation-duration: 4.1s; animation-delay: 0.6s; }
+.bubble-3  { width: 12px; height: 12px; left: 65%;  bottom: 55%; animation-duration: 3.6s; animation-delay: 1.2s; }
+.bubble-4  { width: 6px;  height: 6px;  left: 22%;  bottom: 40%; animation-duration: 4.5s; animation-delay: 0.3s; }
+.bubble-5  { width: 9px;  height: 9px;  left: 80%;  bottom: 92%; animation-duration: 3.8s; animation-delay: 1.8s; }
+.bubble-6  { width: 5px;  height: 5px;  left: 55%;  bottom: 15%; animation-duration: 4.3s; animation-delay: 0.9s; }
+.bubble-7  { width: 8px;  height: 8px;  left: 8%;   bottom: 85%; animation-duration: 3.4s; animation-delay: 2.1s; }
+.bubble-8  { width: 11px; height: 11px; left: 88%;  bottom: 45%; animation-duration: 3.9s; animation-delay: 1.5s; }
+
+/* Three bigger bubbles */
+.bubble-big-1 {
+    width: 42px; height: 42px; left: 30%; bottom: 50%;
+    animation-duration: 4s; animation-delay: 0.4s;
+    font-size: 16px;
+}
+.bubble-big-2 {
+    width: 40px; height: 40px; left: 58%; bottom: 30%;
+    animation-duration: 4.6s; animation-delay: 1s;
+    font-size: 16px;
+}
+.bubble-big-3 {
+    width: 38px; height: 38px; left: 75%; bottom: 65%;
+    animation-duration: 3.7s; animation-delay: 2s;
+}
+
+@keyframes bubble-dance {
+    0%   { transform: translate(0, 0); }
+    20%  { transform: translate(3px, -4px); }
+    40%  { transform: translate(-2px, 2px); }
+    60%  { transform: translate(4px, 3px); }
+    80%  { transform: translate(-3px, -2px); }
+    100% { transform: translate(0, 0); }
+}
+
+@media (max-width: 560px) {
+    .bubbles-container {
+        width: 130px;
+    }
+}
+
+/* ============================================================
+   RUNNING MODE
+   ============================================================ */
+
+.hero-content {
+    transition: min-height 0.3s ease;
+}
+
+.profile-img {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.4s ease;
+}
+
+.hero-tagline,
+.about-text {
+    transition: opacity 0.3s ease;
+}
+
+.running-mode .profile-img,
+.running-mode .hero-tagline,
+.running-mode .about-text {
+    animation: fade-switch 0.4s ease;
+}
+
+@keyframes fade-switch {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.running-mode .hero-parallax-bg {
+    background:
+        radial-gradient(ellipse at 18% 55%, rgba(34, 197, 94, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 82% 18%, rgba(34, 197, 94, 0.045) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 90%, rgba(34, 197, 94, 0.03) 0%, transparent 45%);
+}
+
+#bubble-running {
+    cursor: pointer;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
