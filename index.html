@@ -72,7 +72,7 @@
             <div class="bubble bubble-7"></div>
             <div class="bubble bubble-8"></div>
             <div class="bubble bubble--icon bubble-big-1" id="bubble-running"><i class="fas fa-person-running"></i></div>
-            <div class="bubble bubble--icon bubble-big-2"><i class="fas fa-person-swimming"></i></div>
+            <div class="bubble bubble--icon bubble-big-2" id="bubble-diving"><i class="fas fa-person-swimming"></i></div>
             <div class="bubble bubble-big-3"></div>
         </div>
 
@@ -222,18 +222,30 @@
         const heroContent = document.querySelector('.hero-content');
 
         bubbleRunning.addEventListener('mouseenter', () => {
-            heroContent.style.minHeight = heroContent.offsetHeight + 'px';
             document.body.classList.add('running-mode');
             profileImg.src = 'static/running.png';
             heroTagline.innerHTML = 'Runner';
-            aboutText.innerHTML = 'When I\'m not training language models, I\'m training for marathons. I completed my first one and haven\'t stopped since.';
         });
 
         bubbleRunning.addEventListener('mouseleave', () => {
             document.body.classList.remove('running-mode');
             profileImg.src = originalImg;
             heroTagline.innerHTML = originalTagline;
-            aboutText.innerHTML = originalAbout;
+        });
+
+        // Diving mode
+        const bubbleDiving = document.getElementById('bubble-diving');
+
+        bubbleDiving.addEventListener('mouseenter', () => {
+            document.body.classList.add('diving-mode');
+            profileImg.src = 'static/dive.png';
+            heroTagline.innerHTML = 'Freediver';
+        });
+
+        bubbleDiving.addEventListener('mouseleave', () => {
+            document.body.classList.remove('diving-mode');
+            profileImg.src = originalImg;
+            heroTagline.innerHTML = originalTagline;
         });
 
         // Fade-in on scroll
